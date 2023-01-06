@@ -49,6 +49,7 @@ local ThemeManager = {} do
 
 		if Toggles.RainbowAccent.Value then
 			self.Library.AccentColor = self.Library.CurrentRainbowColor
+			Options.AccentColor.Value = self.Library.CurrentRainbowColor
 		end
 		self.Library:UpdateColorsUsingRegistry()
 	end
