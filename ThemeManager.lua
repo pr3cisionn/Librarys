@@ -1,4 +1,5 @@
 local httpService = game:GetService('HttpService')
+local runService = game:GetService('RunService')
 local ThemeManager = {} do
 	ThemeManager.Folder = 'LinoriaLibSettings'
 	-- if not isfolder(ThemeManager.Folder) then makefolder(ThemeManager.Folder) end
@@ -45,6 +46,10 @@ local ThemeManager = {} do
 		self.Library.OutlineColor = Options.OutlineColor.Value
 
 		self.Library.AccentColorDark = self.Library:GetDarkerColor(self.Library.AccentColor);
+
+		if self.Library.RainbowAccent then
+			self.Library.AccentColor = self.Library.CurrentRainbowColor
+		end
 		self.Library:UpdateColorsUsingRegistry()
 	end
 
@@ -81,6 +86,7 @@ local ThemeManager = {} do
 		groupbox:AddLabel('Accent color'):AddColorPicker('AccentColor', { Default = self.Library.AccentColor });
 		groupbox:AddLabel('Outline color'):AddColorPicker('OutlineColor', { Default = self.Library.OutlineColor });
 		groupbox:AddLabel('Font color')	:AddColorPicker('FontColor', { Default = self.Library.FontColor });
+		groupbox:AddToggle({Text = 'Rainbow Accent', Default = self.Library.RainbowAccent,})
 
 		local ThemesArray = {}
 		for Name, Theme in next, self.BuiltInThemes do
@@ -248,5 +254,9 @@ local ThemeManager = {} do
 	end
 
 	ThemeManager:BuildFolderTree()
+
+	runService.RenderStepped:Connect(function()
+		self:ThemeUpdate()
+	end)
 end
 return ThemeManager
