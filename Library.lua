@@ -33,6 +33,8 @@ local Library = {
     BackgroundColor = Color3.fromRGB(20, 20, 20);
     AccentColor = Color3.fromRGB(155, 0, 0);
     OutlineColor = Color3.fromRGB(50, 50, 50);
+    
+    RainbowAccent = false;
 
     Black = Color3.new(0, 0, 0);
 
