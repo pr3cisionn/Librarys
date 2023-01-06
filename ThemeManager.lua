@@ -44,6 +44,7 @@ local ThemeManager = {} do
 		self.Library.AccentColor = Options.AccentColor.Value
 		self.Library.BackgroundColor = Options.BackgroundColor.Value
 		self.Library.OutlineColor = Options.OutlineColor.Value
+		self.Library.RainbowAccent = Toggles.RainbowAccent.Value
 
 		self.Library.AccentColorDark = self.Library:GetDarkerColor(self.Library.AccentColor);
 
