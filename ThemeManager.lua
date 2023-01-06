@@ -87,7 +87,7 @@ local ThemeManager = {} do
 		groupbox:AddLabel('Accent color'):AddColorPicker('AccentColor', { Default = self.Library.AccentColor });
 		groupbox:AddLabel('Outline color'):AddColorPicker('OutlineColor', { Default = self.Library.OutlineColor });
 		groupbox:AddLabel('Font color')	:AddColorPicker('FontColor', { Default = self.Library.FontColor });
-		groupbox:AddToggle('RainbowAccent', {Text = 'Rainbow Accent',Default = true, });
+		groupbox:AddToggle('RainbowAccent', {Text = 'Rainbow Accent',Default = self.Library.RainbowAccent, });
 
 		local ThemesArray = {}
 		for Name, Theme in next, self.BuiltInThemes do
