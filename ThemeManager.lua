@@ -44,11 +44,10 @@ local ThemeManager = {} do
 		self.Library.AccentColor = Options.AccentColor.Value
 		self.Library.BackgroundColor = Options.BackgroundColor.Value
 		self.Library.OutlineColor = Options.OutlineColor.Value
-		self.Library.RainbowAccent = Toggles.RainbowAccent.Value
 
 		self.Library.AccentColorDark = self.Library:GetDarkerColor(self.Library.AccentColor);
 
-		if self.Library.RainbowAccent then
+		if Toggles.RainbowAccent.Value then
 			self.Library.AccentColor = self.Library.CurrentRainbowColor
 		end
 		self.Library:UpdateColorsUsingRegistry()
