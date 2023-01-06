@@ -34,7 +34,7 @@ local Library = {
     AccentColor = Color3.fromRGB(155, 0, 0);
     OutlineColor = Color3.fromRGB(50, 50, 50);
     
-    RainbowAccent = false;
+    RainbowAccent = true;
 
     Black = Color3.new(0, 0, 0);
 
