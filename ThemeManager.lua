@@ -253,11 +253,5 @@ local ThemeManager = {} do
 	end
 
 	ThemeManager:BuildFolderTree()
-
-	runService.RenderStepped:Connect(function()
-		if ThemeManager:ThemeUpdate() then
-			ThemeManager:ThemeUpdate()
-		end
-	end)
 end
 return ThemeManager
